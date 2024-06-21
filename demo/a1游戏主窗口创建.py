@@ -22,8 +22,17 @@ if __name__ == '__main__':
 
     # 设置标题
     pygame.display.set_caption("飞机大战")
+
+    # 设置循环帧率 30FPS,60FPS
     clock = pygame.time.Clock()
 
     while True:
+
+        """
+        while 循环被称作窗口的主循环，它主要有两个作用：
+        避免程序结束，窗口关闭
+        实时在窗口中绘制其他图像
+        """
+
         # 设置 30 帧数
         clock.tick(30)
