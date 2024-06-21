@@ -1,16 +1,14 @@
 """
-# This is a sample Python script.
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+程序入口
+    1. 导入主框架的文件MainScene.py
+    2. 创建类MainScene的对象
+    3. 对象调用 类MainScene的run函数
 """
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from MainScene import MainScene
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    # 创建主场景
+    mainScene = MainScene()
+    # 开始游戏
+    mainScene.run()
