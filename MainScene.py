@@ -1,7 +1,7 @@
 """
 游戏主窗口文件
     MainScene 类表示游戏主场景，负责游戏的核心逻辑：
-    #  初始化主场景
+    初始化主场景
 	 def __init__(self):
 	    创建主窗口,飞机大战等标题
 
@@ -16,7 +16,7 @@
 
 import pygame
 from config1 import *
-# from GameMap import GameMap
+from GameMap import GameMap
 
 
 # 主场景
@@ -39,23 +39,22 @@ class MainScene(object):
         # 初始化游戏元素
         self.init_elements()
 
-
     # 初始化游戏元素
     def init_elements(self):
         # 初始化游戏地图
-        pass
+        self.map = GameMap(self.scene)
 
     # 计算坐标
     def calc_position(self):
-        pass
+        self.map.calc_position()
 
     # 绘制元素
     def draw_elements(self):
-        pass
+        self.map.draw_element()
 
     # 处理事件
     def handle_events(self):
-        pass
+        pygame.event.get()
 
     # 碰撞检测
     def detect_conlision(self):
