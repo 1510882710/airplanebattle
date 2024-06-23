@@ -106,7 +106,42 @@ class MainScene(object):
 
     # 碰撞检测
     def detect_conlision(self):
-        pass
+        # 敌机和英雄子弹
+        for bullet in self.hero.bullets.bullet_list:
+            if not bullet.visible:
+                continue
+            for enemy in self.enemy.enemies:
+                if not enemy.visible or not bullet.visible:
+                    continue
+                    # 判断两个边框是否相交 就是 碰撞
+                if pygame.Rect.colliderect(bullet.bbox, enemy.bbox):
+                    bullet.set_unused()
+                    enemy.set_unused()
+
+        # 敌机和英雄飞机
+        for enemy in self.enemy.enemies:
+            if not enemy.visible:
+                continue
+            if pygame.Rect.colliderect(self.hero.bbox, enemy.bbox):
+                enemy.set_unused()
+
+        # 敌机子弹和英雄飞机
+        for enemy in self.enemy.enemies:
+            if not enemy.bullet.visible:
+                continue
+            if pygame.Rect.colliderect(self.hero.bbox, enemy.bullet.bbox):
+                enemy.bullet.set_unused()
+
+        # 敌机子弹和英雄子弹
+        for enemy in self.enemy.enemies:
+            if not enemy.bullet.visible:
+                continue
+            for bullet in self.hero.bullets.bullet_list:
+                if not bullet.visible:
+                    continue
+                if pygame.Rect.colliderect(bullet.bbox, enemy.bullet.bbox):
+                    enemy.bullet.set_unused()
+                    bullet.set_unused()
 
     # 主循环
     def run(self):
