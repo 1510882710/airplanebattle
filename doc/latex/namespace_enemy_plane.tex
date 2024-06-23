@@ -1,0 +1,73 @@
+\doxysection{Enemy\+Plane 命名空间参考}
+\hypertarget{namespace_enemy_plane}{}\label{namespace_enemy_plane}\index{EnemyPlane@{EnemyPlane}}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane}{Enemy\+Plane}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_enemy_plane_acb971a6e32945ceeab8fff4edc6076f4}{window}} = pygame.\+display.\+set\+\_\+mode(\mbox{[}512, 768\mbox{]})
+\item 
+\mbox{\hyperlink{namespace_enemy_plane_acf81b266b6a61dbafde6b18cda407783}{clock}} = pygame.\+time.\+Clock()
+\item 
+\mbox{\hyperlink{namespace_enemy_plane_a6fd230816f405b9a6dfe67d535aaadb5}{enemy}} = \mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane}{Enemy\+Plane}}(\mbox{\hyperlink{namespace_enemy_plane_acb971a6e32945ceeab8fff4edc6076f4}{window}})
+\item 
+int \mbox{\hyperlink{namespace_enemy_plane_a515600fd90eb1242f8a58b79e01d9237}{index}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\begin{DoxyVerb}功能: 多个敌机从上向屏幕下方移动，并能够随机发射子弹。
+    单个敌机的实现，
+    主要实现方法如下：
+    set_used 设置飞机可用，并随机设置其初始位置
+    set_unused 设置飞机不可用，并将其设置到不合法的位置
+    calc_position 计算敌机位置、以及敌机发射的子弹位置
+    draw_element 绘制敌机、以及敌机子弹图像
+    shoot 敌机发射子弹
+\end{DoxyVerb}
+ 
+
+\doxysubsection{变量说明}
+\Hypertarget{namespace_enemy_plane_acf81b266b6a61dbafde6b18cda407783}\index{EnemyPlane@{EnemyPlane}!clock@{clock}}
+\index{clock@{clock}!EnemyPlane@{EnemyPlane}}
+\doxysubsubsection{\texorpdfstring{clock}{clock}}
+{\footnotesize\ttfamily \label{namespace_enemy_plane_acf81b266b6a61dbafde6b18cda407783} 
+Enemy\+Plane.\+clock = pygame.\+time.\+Clock()}
+
+
+
+在文件 \mbox{\hyperlink{_enemy_plane_8py_source}{Enemy\+Plane.\+py}} 第 \mbox{\hyperlink{_enemy_plane_8py_source_l00079}{79}} 行定义.
+
+\Hypertarget{namespace_enemy_plane_a6fd230816f405b9a6dfe67d535aaadb5}\index{EnemyPlane@{EnemyPlane}!enemy@{enemy}}
+\index{enemy@{enemy}!EnemyPlane@{EnemyPlane}}
+\doxysubsubsection{\texorpdfstring{enemy}{enemy}}
+{\footnotesize\ttfamily \label{namespace_enemy_plane_a6fd230816f405b9a6dfe67d535aaadb5} 
+Enemy\+Plane.\+enemy = \mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane}{Enemy\+Plane}}(\mbox{\hyperlink{namespace_enemy_plane_acb971a6e32945ceeab8fff4edc6076f4}{window}})}
+
+
+
+在文件 \mbox{\hyperlink{_enemy_plane_8py_source}{Enemy\+Plane.\+py}} 第 \mbox{\hyperlink{_enemy_plane_8py_source_l00081}{81}} 行定义.
+
+\Hypertarget{namespace_enemy_plane_a515600fd90eb1242f8a58b79e01d9237}\index{EnemyPlane@{EnemyPlane}!index@{index}}
+\index{index@{index}!EnemyPlane@{EnemyPlane}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily \label{namespace_enemy_plane_a515600fd90eb1242f8a58b79e01d9237} 
+int Enemy\+Plane.\+index = 0}
+
+
+
+在文件 \mbox{\hyperlink{_enemy_plane_8py_source}{Enemy\+Plane.\+py}} 第 \mbox{\hyperlink{_enemy_plane_8py_source_l00084}{84}} 行定义.
+
+\Hypertarget{namespace_enemy_plane_acb971a6e32945ceeab8fff4edc6076f4}\index{EnemyPlane@{EnemyPlane}!window@{window}}
+\index{window@{window}!EnemyPlane@{EnemyPlane}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily \label{namespace_enemy_plane_acb971a6e32945ceeab8fff4edc6076f4} 
+Enemy\+Plane.\+window = pygame.\+display.\+set\+\_\+mode(\mbox{[}512, 768\mbox{]})}
+
+
+
+在文件 \mbox{\hyperlink{_enemy_plane_8py_source}{Enemy\+Plane.\+py}} 第 \mbox{\hyperlink{_enemy_plane_8py_source_l00078}{78}} 行定义.
+

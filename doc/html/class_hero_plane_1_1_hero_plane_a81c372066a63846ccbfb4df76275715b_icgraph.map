@@ -1,0 +1,6 @@
+<map id="HeroPlane.HeroPlane.calc_position" name="HeroPlane.HeroPlane.calc_position">
+<area shape="rect" id="Node000001" title=" " alt="" coords="231,29,404,72"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="353,16,340,10,317,8,296,10,283,15,278,21,280,28,275,29,273,19,280,10,295,5,317,3,341,5,356,11"/>
+<area shape="rect" id="Node000002" href="$class_main_scene_1_1_main_scene.html#a93494b3ad4f16b9b6ac828619a9a544a" title=" " alt="" coords="5,37,183,64"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="215,53,183,53,183,48,215,48"/>
+</map>

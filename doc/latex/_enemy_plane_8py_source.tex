@@ -1,0 +1,109 @@
+\doxysection{Enemy\+Plane.\+py}
+\hypertarget{_enemy_plane_8py_source}{}\label{_enemy_plane_8py_source}\mbox{\hyperlink{_enemy_plane_8py}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00001}\mbox{\hyperlink{namespace_enemy_plane}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00002}00002\ \textcolor{stringliteral}{功能:\ 多个敌机从上向屏幕下方移动，并能够随机发射子弹。}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00003}00003\ \textcolor{stringliteral}{\ \ \ \ 单个敌机的实现，}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00004}00004\ \textcolor{stringliteral}{\ \ \ \ 主要实现方法如下：}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00005}00005\ \textcolor{stringliteral}{\ \ \ \ set\_used\ 设置飞机可用，并随机设置其初始位置}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00006}00006\ \textcolor{stringliteral}{\ \ \ \ set\_unused\ 设置飞机不可用，并将其设置到不合法的位置}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00007}00007\ \textcolor{stringliteral}{\ \ \ \ calc\_position\ 计算敌机位置、以及敌机发射的子弹位置}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00008}00008\ \textcolor{stringliteral}{\ \ \ \ draw\_element\ 绘制敌机、以及敌机子弹图像}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00009}00009\ \textcolor{stringliteral}{\ \ \ \ shoot\ 敌机发射子弹}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00010}00010\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00011}00011\ \textcolor{keyword}{import}\ pygame}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00012}00012\ \textcolor{keyword}{import}\ random}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00013}00013\ \textcolor{keyword}{from}\ Bullet\ \textcolor{keyword}{import}\ Bullet}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00014}00014\ \textcolor{keyword}{from}\ config1\ \textcolor{keyword}{import}\ *}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00017}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane}{EnemyPlane}}:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00019}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_af7970ef8f0c059102ad63b96b1f39e41}{00019}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_af7970ef8f0c059102ad63b96b1f39e41}{\_\_init\_\_}}(self,\ scene,\ speed=10):}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 游戏主场景}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00021}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_ae5f3d14ac6804c4311bcc3e858eb8e5f}{00021}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_ae5f3d14ac6804c4311bcc3e858eb8e5f}{scene}}\ =\ scene}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机资源}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00023}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a61f61323f57eb3676d4a207e162cfab6}{00023}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a61f61323f57eb3676d4a207e162cfab6}{image}}\ =\ pygame.image.load(f\textcolor{stringliteral}{'source/plane/enemy-\/\{random.randint(1,\ 4)\}.png'})}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机边框}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00025}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{00025}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}\ =\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a61f61323f57eb3676d4a207e162cfab6}{image}}.get\_rect()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 移动速度}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00027}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a1870478c579e80f1f05bc63b2a8208c7}{00027}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a1870478c579e80f1f05bc63b2a8208c7}{speed}}\ =\ speed}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 是否可见}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00029}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5a0382482b2128543e5707299b17069c}{00029}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5a0382482b2128543e5707299b17069c}{visible}}\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化子弹}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00031}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{00031}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{bullet}}\ =\ \mbox{\hyperlink{class_bullet_1_1_bullet}{Bullet}}(scene,\ is\_enemy=\textcolor{keyword}{True})}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00033}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a50facea912974644beaf1e0b15df2d04}{00033}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a50facea912974644beaf1e0b15df2d04}{set\_used}}(self,\ start\_x,\ start\_y):}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[0]\ =\ start\_x}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[1]\ =\ start\_y}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a1870478c579e80f1f05bc63b2a8208c7}{speed}}\ =\ random.randint(4,\ 8)\ \ \ \textcolor{comment}{\#\ 每次生成的飞机是随机速度}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5a0382482b2128543e5707299b17069c}{visible}}\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00040}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_aba69ae46235e584071d735a14f85a848}{00040}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_aba69ae46235e584071d735a14f85a848}{calc\_position}}(self):}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 计算飞机位置}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5a0382482b2128543e5707299b17069c}{visible}}:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}.move\_ip(0,\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a1870478c579e80f1f05bc63b2a8208c7}{speed}})}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[1]\ >\ SCENE\_H:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5f52202b86eb4be9ee98c15270d34abb}{set\_unused}}()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 计算子弹位置}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{bullet}}.visible:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{bullet}}.move(0,\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a1870478c579e80f1f05bc63b2a8208c7}{speed}}\ +\ 5)}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00052}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a7e3d20b365e744f9a59b2ffa379b1973}{00052}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a7e3d20b365e744f9a59b2ffa379b1973}{draw\_element}}(self):}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 绘制飞机}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5a0382482b2128543e5707299b17069c}{visible}}:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_ae5f3d14ac6804c4311bcc3e858eb8e5f}{scene}}.blit(self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a61f61323f57eb3676d4a207e162cfab6}{image}},\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}})}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 绘制子弹}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{bullet}}.visible:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{bullet}}.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a7e3d20b365e744f9a59b2ffa379b1973}{draw\_element}}()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00060}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5f52202b86eb4be9ee98c15270d34abb}{00060}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5f52202b86eb4be9ee98c15270d34abb}{set\_unused}}(self):}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a5a0382482b2128543e5707299b17069c}{visible}}\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[0]\ =\ -\/1000\ \ \ \ \textcolor{comment}{\#\ 随意位置,只要在屏幕之外}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[1]\ =\ -\/1000}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00065}00065\ \ \ \ \ \textcolor{comment}{\#\ 发射子弹}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00066}\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a53b37a8364810fbb73afe62e4492f0ab}{00066}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a53b37a8364810fbb73afe62e4492f0ab}{shoot}}(self):}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 子弹可见时就不再发射}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{bullet}}.visible:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ start\_x\ =\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[0]\ +\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[2]/2\ -\/\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{bullet}}.bbox[2]/2}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ start\_y\ =\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[1]\ +\ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a38dc1dbe67d0c028bd3fab53725fad3c}{bbox}}[3]\ -\/\ 10}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a737b7ee27b91163f22720b8530d032b6}{bullet}}.\mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane_a50facea912974644beaf1e0b15df2d04}{set\_used}}(start\_x,\ start\_y)\ \ \textcolor{comment}{\#\ 给子弹初始坐标}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00075}00075\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00077}00077\ \ \ \ \ pygame.init()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00078}\mbox{\hyperlink{namespace_enemy_plane_acb971a6e32945ceeab8fff4edc6076f4}{00078}}\ \ \ \ \ window\ =\ pygame.display.set\_mode([512,\ 768])}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00079}\mbox{\hyperlink{namespace_enemy_plane_acf81b266b6a61dbafde6b18cda407783}{00079}}\ \ \ \ \ clock\ =\ pygame.time.Clock()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00081}\mbox{\hyperlink{namespace_enemy_plane_a6fd230816f405b9a6dfe67d535aaadb5}{00081}}\ \ \ \ \ enemy\ =\ \mbox{\hyperlink{class_enemy_plane_1_1_enemy_plane}{EnemyPlane}}(window)}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00082}00082\ \ \ \ \ enemy.set\_used(random.randint(0,\ SCENE\_W\ -\/\ enemy.bbox[2]),\ -\/enemy.bbox[3])}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00084}\mbox{\hyperlink{namespace_enemy_plane_a515600fd90eb1242f8a58b79e01d9237}{00084}}\ \ \ \ \ index\ =\ 0}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{while}\ \textcolor{keyword}{True}:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 清空窗口}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ window.fill((0,\ 0,\ 0))}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 计算位置}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ enemy.calc\_position()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 绘制敌机}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00091}00091\ \ \ \ \ \ \ \ \ enemy.draw\_element()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 发射子弹}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ index\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ index\ >\ 120\ \textcolor{keywordflow}{and}\ random.randint(1,\ 100)\ >\ 80\ \textcolor{keywordflow}{and}\ enemy.bbox[1]\ <\ 300:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ enemy.shoot()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ 0}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机复活}}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ enemy.visible:}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ enemy.set\_used(random.randint(0,\ SCENE\_W\ -\/\ enemy.bbox[2]),\ -\/enemy.bbox[3])}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00102}00102\ \ \ \ \ \ \ \ \ pygame.event.get()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00103}00103\ \ \ \ \ \ \ \ \ pygame.display.update()}
+\DoxyCodeLine{\Hypertarget{_enemy_plane_8py_source_l00104}00104\ \ \ \ \ \ \ \ \ clock.tick(60)}
+
+\end{DoxyCode}

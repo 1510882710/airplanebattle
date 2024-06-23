@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>airplanebattle Project: MainScene.MainScene类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">airplanebattle Project<span id="projectnumber">&#160;Beta版</span>
+   </div>
+   <div id="projectbrief">飞机大战游戏-python</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_main_scene_1_1_main_scene.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="class_main_scene_1_1_main_scene-members.html">所有成员列表</a>  </div>
+  <div class="headertitle"><div class="title">MainScene.MainScene类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+类 MainScene.MainScene 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene__inherit__graph.png" border="0" usemap="#a_main_scene_8_main_scene_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_main_scene_8_main_scene_inherit__map" id="a_main_scene_8_main_scene_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,123,152,491"/>
+<area shape="rect" title=" " alt="" coords="55,5,103,75"/>
+<area shape="poly" title=" " alt="" coords="81,89,81,123,76,123,76,89"/>
+</map>
+</div>
+<div class="dynheader">
+MainScene.MainScene 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene__coll__graph.png" border="0" usemap="#a_main_scene_8_main_scene_coll__map" alt="Collaboration graph"/></div>
+<map name="a_main_scene_8_main_scene_coll__map" id="a_main_scene_8_main_scene_coll__map">
+<area shape="rect" title=" " alt="" coords="5,123,152,491"/>
+<area shape="rect" title=" " alt="" coords="55,5,103,75"/>
+<area shape="poly" title=" " alt="" coords="81,89,81,123,76,123,76,89"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a6204a76018e95d34439acd468787fb9b" id="r_a6204a76018e95d34439acd468787fb9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6204a76018e95d34439acd468787fb9b">__init__</a> (self)</td></tr>
+<tr class="separator:a6204a76018e95d34439acd468787fb9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aadd3527c03e3f656120cc8f5ab89ef" id="r_a7aadd3527c03e3f656120cc8f5ab89ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aadd3527c03e3f656120cc8f5ab89ef">init_elements</a> (self)</td></tr>
+<tr class="separator:a7aadd3527c03e3f656120cc8f5ab89ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9d1eb67c2597f7664d5fc23ef105e25" id="r_ad9d1eb67c2597f7664d5fc23ef105e25"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9d1eb67c2597f7664d5fc23ef105e25">calc_position</a> (self)</td></tr>
+<tr class="separator:ad9d1eb67c2597f7664d5fc23ef105e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366751cf57fec0327def32e6a9de5042" id="r_a366751cf57fec0327def32e6a9de5042"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a366751cf57fec0327def32e6a9de5042">draw_elements</a> (self)</td></tr>
+<tr class="separator:a366751cf57fec0327def32e6a9de5042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb15dab3e9814dd27273303a3467df1" id="r_a6eb15dab3e9814dd27273303a3467df1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6eb15dab3e9814dd27273303a3467df1">handle_events</a> (self)</td></tr>
+<tr class="separator:a6eb15dab3e9814dd27273303a3467df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb160e5bb20791b3f0d40d74e101f8a3" id="r_adb160e5bb20791b3f0d40d74e101f8a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb160e5bb20791b3f0d40d74e101f8a3">detect_conlision</a> (self)</td></tr>
+<tr class="separator:adb160e5bb20791b3f0d40d74e101f8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ebbd7791e9f817ace34656e0ac4973" id="r_aa9ebbd7791e9f817ace34656e0ac4973"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9ebbd7791e9f817ace34656e0ac4973">draw_battle_data</a> (self)</td></tr>
+<tr class="separator:aa9ebbd7791e9f817ace34656e0ac4973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93494b3ad4f16b9b6ac828619a9a544a" id="r_a93494b3ad4f16b9b6ac828619a9a544a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93494b3ad4f16b9b6ac828619a9a544a">run</a> (self)</td></tr>
+<tr class="separator:a93494b3ad4f16b9b6ac828619a9a544a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:a8af8da80d070feda0f6bf3e57660e8f4" id="r_a8af8da80d070feda0f6bf3e57660e8f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8af8da80d070feda0f6bf3e57660e8f4">clock</a></td></tr>
+<tr class="separator:a8af8da80d070feda0f6bf3e57660e8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38f178ed1a08e3bb650ab7e8fd7acdc" id="r_ae38f178ed1a08e3bb650ab7e8fd7acdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae38f178ed1a08e3bb650ab7e8fd7acdc">scene</a></td></tr>
+<tr class="separator:ae38f178ed1a08e3bb650ab7e8fd7acdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc0fa33dbaf387e2aab197f13f32a4c5" id="r_adc0fa33dbaf387e2aab197f13f32a4c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc0fa33dbaf387e2aab197f13f32a4c5">defeat_count</a></td></tr>
+<tr class="separator:adc0fa33dbaf387e2aab197f13f32a4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7be49b25b46309a5f297e467c1fa1e6" id="r_ac7be49b25b46309a5f297e467c1fa1e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7be49b25b46309a5f297e467c1fa1e6">damage_count</a></td></tr>
+<tr class="separator:ac7be49b25b46309a5f297e467c1fa1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff5cfa604d6d07eea373c6be1f34e89" id="r_a6ff5cfa604d6d07eea373c6be1f34e89"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ff5cfa604d6d07eea373c6be1f34e89">impact_count</a></td></tr>
+<tr class="separator:a6ff5cfa604d6d07eea373c6be1f34e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94dbb9ad59f3abe7c53b1e7e32b21b2e" id="r_a94dbb9ad59f3abe7c53b1e7e32b21b2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94dbb9ad59f3abe7c53b1e7e32b21b2e">map</a></td></tr>
+<tr class="separator:a94dbb9ad59f3abe7c53b1e7e32b21b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4e99c2d7a325e531f68f8791435fd6" id="r_adb4e99c2d7a325e531f68f8791435fd6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb4e99c2d7a325e531f68f8791435fd6">hero</a></td></tr>
+<tr class="separator:adb4e99c2d7a325e531f68f8791435fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022c152da0d5ba0a5f95e1bde6a06614" id="r_a022c152da0d5ba0a5f95e1bde6a06614"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a022c152da0d5ba0a5f95e1bde6a06614">enemy</a></td></tr>
+<tr class="separator:a022c152da0d5ba0a5f95e1bde6a06614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><pre class="fragment">MainScene 类表示游戏主场景，负责游戏的核心逻辑
+</pre> 
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00024">24</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a6204a76018e95d34439acd468787fb9b" name="a6204a76018e95d34439acd468787fb9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6204a76018e95d34439acd468787fb9b">&#9670;&#160;</a></span>__init__()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.__init__ </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ad9d1eb67c2597f7664d5fc23ef105e25" name="ad9d1eb67c2597f7664d5fc23ef105e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9d1eb67c2597f7664d5fc23ef105e25">&#9670;&#160;</a></span>calc_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.calc_position </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00058">58</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25_cgraph.png" border="0" usemap="#aclass_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25_cgraph" alt=""/></div>
+<map name="aclass_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25_cgraph" id="aclass_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,189,72"/>
+<area shape="poly" title=" " alt="" coords="62,29,60,19,66,10,79,5,97,3,117,5,129,11,126,16,115,10,97,8,80,10,70,14,65,21,67,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25_icgraph.png" border="0" usemap="#aclass_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25_icgraph" alt=""/></div>
+<map name="aclass_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25_icgraph" id="aclass_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25_icgraph">
+<area shape="rect" title=" " alt="" coords="231,29,414,72"/>
+<area shape="poly" title=" " alt="" coords="359,16,345,10,322,8,301,10,288,15,282,21,284,28,279,29,277,19,285,10,300,5,322,3,347,5,361,11"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#a93494b3ad4f16b9b6ac828619a9a544a" title=" " alt="" coords="5,37,183,64"/>
+<area shape="poly" title=" " alt="" coords="215,53,183,53,183,48,215,48"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adb160e5bb20791b3f0d40d74e101f8a3" name="adb160e5bb20791b3f0d40d74e101f8a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb160e5bb20791b3f0d40d74e101f8a3">&#9670;&#160;</a></span>detect_conlision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.detect_conlision </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00115">115</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene_adb160e5bb20791b3f0d40d74e101f8a3_icgraph.png" border="0" usemap="#aclass_main_scene_1_1_main_scene_adb160e5bb20791b3f0d40d74e101f8a3_icgraph" alt=""/></div>
+<map name="aclass_main_scene_1_1_main_scene_adb160e5bb20791b3f0d40d74e101f8a3_icgraph" id="aclass_main_scene_1_1_main_scene_adb160e5bb20791b3f0d40d74e101f8a3_icgraph">
+<area shape="rect" title=" " alt="" coords="231,5,426,48"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#a93494b3ad4f16b9b6ac828619a9a544a" title=" " alt="" coords="5,13,183,40"/>
+<area shape="poly" title=" " alt="" coords="215,29,183,29,183,24,215,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa9ebbd7791e9f817ace34656e0ac4973" name="aa9ebbd7791e9f817ace34656e0ac4973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ebbd7791e9f817ace34656e0ac4973">&#9670;&#160;</a></span>draw_battle_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.draw_battle_data </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00157">157</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene_aa9ebbd7791e9f817ace34656e0ac4973_icgraph.png" border="0" usemap="#aclass_main_scene_1_1_main_scene_aa9ebbd7791e9f817ace34656e0ac4973_icgraph" alt=""/></div>
+<map name="aclass_main_scene_1_1_main_scene_aa9ebbd7791e9f817ace34656e0ac4973_icgraph" id="aclass_main_scene_1_1_main_scene_aa9ebbd7791e9f817ace34656e0ac4973_icgraph">
+<area shape="rect" title=" " alt="" coords="465,35,651,77"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#a366751cf57fec0327def32e6a9de5042" title=" " alt="" coords="231,5,417,48"/>
+<area shape="poly" title=" " alt="" coords="449,45,417,41,418,36,450,40"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#a93494b3ad4f16b9b6ac828619a9a544a" title=" " alt="" coords="5,43,183,69"/>
+<area shape="poly" title=" " alt="" coords="450,62,417,63,231,63,183,62,183,56,231,57,417,57,450,57"/>
+<area shape="poly" title=" " alt="" coords="215,43,184,47,183,42,215,38"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a366751cf57fec0327def32e6a9de5042" name="a366751cf57fec0327def32e6a9de5042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a366751cf57fec0327def32e6a9de5042">&#9670;&#160;</a></span>draw_elements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.draw_elements </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00066">66</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042_cgraph.png" border="0" usemap="#aclass_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042_cgraph" alt=""/></div>
+<map name="aclass_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042_cgraph" id="aclass_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,192,48"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#aa9ebbd7791e9f817ace34656e0ac4973" title=" " alt="" coords="240,5,426,48"/>
+<area shape="poly" title=" " alt="" coords="192,24,224,24,224,29,192,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042_icgraph.png" border="0" usemap="#aclass_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042_icgraph" alt=""/></div>
+<map name="aclass_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042_icgraph" id="aclass_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042_icgraph">
+<area shape="rect" title=" " alt="" coords="231,5,417,48"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#a93494b3ad4f16b9b6ac828619a9a544a" title=" " alt="" coords="5,13,183,40"/>
+<area shape="poly" title=" " alt="" coords="215,29,183,29,183,24,215,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6eb15dab3e9814dd27273303a3467df1" name="a6eb15dab3e9814dd27273303a3467df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eb15dab3e9814dd27273303a3467df1">&#9670;&#160;</a></span>handle_events()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.handle_events </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00076">76</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene_a6eb15dab3e9814dd27273303a3467df1_icgraph.png" border="0" usemap="#aclass_main_scene_1_1_main_scene_a6eb15dab3e9814dd27273303a3467df1_icgraph" alt=""/></div>
+<map name="aclass_main_scene_1_1_main_scene_a6eb15dab3e9814dd27273303a3467df1_icgraph" id="aclass_main_scene_1_1_main_scene_a6eb15dab3e9814dd27273303a3467df1_icgraph">
+<area shape="rect" title=" " alt="" coords="231,5,428,48"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#a93494b3ad4f16b9b6ac828619a9a544a" title=" " alt="" coords="5,13,183,40"/>
+<area shape="poly" title=" " alt="" coords="215,29,183,29,183,24,215,24"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7aadd3527c03e3f656120cc8f5ab89ef" name="a7aadd3527c03e3f656120cc8f5ab89ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aadd3527c03e3f656120cc8f5ab89ef">&#9670;&#160;</a></span>init_elements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.init_elements </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a93494b3ad4f16b9b6ac828619a9a544a" name="a93494b3ad4f16b9b6ac828619a9a544a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93494b3ad4f16b9b6ac828619a9a544a">&#9670;&#160;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.run </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00167">167</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_main_scene_1_1_main_scene_a93494b3ad4f16b9b6ac828619a9a544a_cgraph.png" border="0" usemap="#aclass_main_scene_1_1_main_scene_a93494b3ad4f16b9b6ac828619a9a544a_cgraph" alt=""/></div>
+<map name="aclass_main_scene_1_1_main_scene_a93494b3ad4f16b9b6ac828619a9a544a_cgraph" id="aclass_main_scene_1_1_main_scene_a93494b3ad4f16b9b6ac828619a9a544a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,349,183,376"/>
+<area shape="rect" href="class_bullet_for_hero_1_1_bullet_for_hero.html#a7165e75477489882f61114b4dcfac4c3" title=" " alt="" coords="243,5,454,48"/>
+<area shape="poly" title=" " alt="" coords="95,348,106,294,129,216,147,173,169,131,196,92,229,58,233,55,236,59,232,62,200,96,174,134,152,176,134,218,111,296,100,349"/>
+<area shape="rect" href="class_enemy_manager_1_1_enemy_manager.html#a28f9fd0e97645377f6e1131e0d8bcca7" title=" " alt="" coords="231,72,466,115"/>
+<area shape="poly" title=" " alt="" coords="97,348,111,305,138,245,177,180,201,150,229,125,235,121,238,125,232,129,205,154,181,183,142,247,116,307,102,350"/>
+<area shape="rect" href="class_enemy_plane_1_1_enemy_plane.html#aba69ae46235e584071d735a14f85a848" title=" " alt="" coords="248,139,449,181"/>
+<area shape="poly" title=" " alt="" coords="100,348,119,315,147,273,184,229,229,191,237,186,240,191,232,195,188,233,151,276,123,318,105,350"/>
+<area shape="rect" href="class_game_map_1_1_game_map.html#a22b75297c3505e4cd59e3feaf5dd7a8e" title=" " alt="" coords="262,205,435,248"/>
+<area shape="poly" title=" " alt="" coords="108,347,159,303,193,279,229,258,246,250,248,255,232,262,196,283,162,308,111,351"/>
+<area shape="rect" href="class_hero_plane_1_1_hero_plane.html#a81c372066a63846ccbfb4df76275715b" title=" " alt="" coords="262,296,435,339"/>
+<area shape="poly" title=" " alt="" coords="172,346,246,333,247,338,173,351"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#ad9d1eb67c2597f7664d5fc23ef105e25" title=" " alt="" coords="257,387,440,429"/>
+<area shape="poly" title=" " alt="" coords="173,374,242,386,241,392,172,379"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#adb160e5bb20791b3f0d40d74e101f8a3" title=" " alt="" coords="251,453,446,496"/>
+<area shape="poly" title=" " alt="" coords="117,374,168,406,232,439,248,445,246,450,230,444,165,411,114,379"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#aa9ebbd7791e9f817ace34656e0ac4973" title=" " alt="" coords="519,541,705,584"/>
+<area shape="poly" title=" " alt="" coords="106,375,125,403,153,440,189,476,232,506,280,522,349,535,503,553,503,558,348,540,279,527,229,510,186,480,149,443,120,407,101,378"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#a366751cf57fec0327def32e6a9de5042" title=" " alt="" coords="255,571,442,613"/>
+<area shape="poly" title=" " alt="" coords="104,375,121,410,149,457,187,507,232,550,251,561,248,566,229,554,183,510,145,460,117,413,99,378"/>
+<area shape="rect" href="class_main_scene_1_1_main_scene.html#a6eb15dab3e9814dd27273303a3467df1" title=" " alt="" coords="250,637,447,680"/>
+<area shape="poly" title=" " alt="" coords="101,376,114,423,139,490,178,562,203,595,232,623,238,627,235,632,229,627,199,598,174,565,134,492,109,425,96,377"/>
+<area shape="rect" href="class_bullet_1_1_bullet.html#ac238125ac8c367a07d3d8a9c88523691" title=" " alt="" coords="531,117,693,144"/>
+<area shape="poly" title=" " alt="" coords="449,146,515,139,516,144,450,151"/>
+<area shape="rect" href="class_enemy_plane_1_1_enemy_plane.html#a5f52202b86eb4be9ee98c15270d34abb" title=" " alt="" coords="514,168,709,211"/>
+<area shape="poly" title=" " alt="" coords="450,169,499,174,498,179,449,174"/>
+<area shape="poly" title=" " alt="" coords="300,296,298,286,306,277,323,271,348,269,375,272,392,278,390,283,374,277,348,275,324,277,309,281,304,287,306,295"/>
+<area shape="poly" title=" " alt="" coords="300,387,298,377,306,368,323,362,348,360,375,362,392,369,390,374,374,368,348,365,324,367,309,372,304,378,306,386"/>
+<area shape="poly" title=" " alt="" coords="442,579,503,572,504,577,442,584"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a8af8da80d070feda0f6bf3e57660e8f4" name="a8af8da80d070feda0f6bf3e57660e8f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af8da80d070feda0f6bf3e57660e8f4">&#9670;&#160;</a></span>clock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.clock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac7be49b25b46309a5f297e467c1fa1e6" name="ac7be49b25b46309a5f297e467c1fa1e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7be49b25b46309a5f297e467c1fa1e6">&#9670;&#160;</a></span>damage_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.damage_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00045">45</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adc0fa33dbaf387e2aab197f13f32a4c5" name="adc0fa33dbaf387e2aab197f13f32a4c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0fa33dbaf387e2aab197f13f32a4c5">&#9670;&#160;</a></span>defeat_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.defeat_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a022c152da0d5ba0a5f95e1bde6a06614" name="a022c152da0d5ba0a5f95e1bde6a06614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a022c152da0d5ba0a5f95e1bde6a06614">&#9670;&#160;</a></span>enemy</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.enemy</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00055">55</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adb4e99c2d7a325e531f68f8791435fd6" name="adb4e99c2d7a325e531f68f8791435fd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb4e99c2d7a325e531f68f8791435fd6">&#9670;&#160;</a></span>hero</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.hero</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00053">53</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6ff5cfa604d6d07eea373c6be1f34e89" name="a6ff5cfa604d6d07eea373c6be1f34e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff5cfa604d6d07eea373c6be1f34e89">&#9670;&#160;</a></span>impact_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.impact_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00046">46</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a94dbb9ad59f3abe7c53b1e7e32b21b2e" name="a94dbb9ad59f3abe7c53b1e7e32b21b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94dbb9ad59f3abe7c53b1e7e32b21b2e">&#9670;&#160;</a></span>map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.map</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae38f178ed1a08e3bb650ab7e8fd7acdc" name="ae38f178ed1a08e3bb650ab7e8fd7acdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae38f178ed1a08e3bb650ab7e8fd7acdc">&#9670;&#160;</a></span>scene</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MainScene.MainScene.scene</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_main_scene_8py_source.html">MainScene.py</a> 第 <a class="el" href="_main_scene_8py_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="_main_scene_8py_source.html">MainScene.py</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespace_main_scene.html">MainScene</a></li><li class="navelem"><a class="el" href="class_main_scene_1_1_main_scene.html">MainScene</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

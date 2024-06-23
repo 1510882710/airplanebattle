@@ -1,0 +1,27 @@
+\doxysection{Game\+Map 命名空间参考}
+\hypertarget{namespace_game_map}{}\label{namespace_game_map}\index{GameMap@{GameMap}}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_game_map_1_1_game_map}{Game\+Map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\begin{DoxyVerb}地图滚动
+    创建地图滚动类,实现无缝衔接地图
+    2. 创建完对象后,需加载到 MainScene.py
+
+    GameMap类 只需要三个函数
+        def __init__(self):
+            pass
+
+        def draw_element(self):
+            绘制地图所需要的图像到窗口上
+            pass
+
+        def calc_position(self):
+            计算需要绘制的图像的位置
+            pass
+\end{DoxyVerb}
+ 

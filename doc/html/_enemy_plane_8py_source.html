@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>airplanebattle Project: EnemyPlane.py 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">airplanebattle Project<span id="projectnumber">&#160;Beta版</span>
+   </div>
+   <div id="projectbrief">飞机大战游戏-python</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_enemy_plane_8py_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">EnemyPlane.py</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_enemy_plane_8py.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespace_enemy_plane.html">    1</a></span><span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="stringliteral">功能: 多个敌机从上向屏幕下方移动，并能够随机发射子弹。</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="stringliteral">    单个敌机的实现，</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="stringliteral">    主要实现方法如下：</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="stringliteral">    set_used 设置飞机可用，并随机设置其初始位置</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="stringliteral">    set_unused 设置飞机不可用，并将其设置到不合法的位置</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="stringliteral">    calc_position 计算敌机位置、以及敌机发射的子弹位置</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="stringliteral">    draw_element 绘制敌机、以及敌机子弹图像</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="stringliteral">    shoot 敌机发射子弹</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="stringliteral">&quot;&quot;&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> pygame</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> random</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">from</span> Bullet <span class="keyword">import</span> Bullet</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">from</span> config1 <span class="keyword">import</span> *</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="" data-end="">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_enemy_plane_1_1_enemy_plane.html">EnemyPlane</a>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="" data-end="">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#af7970ef8f0c059102ad63b96b1f39e41">   19</a></span>    <span class="keyword">def </span><a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#af7970ef8f0c059102ad63b96b1f39e41">__init__</a>(self, scene, speed=10):</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="comment"># 游戏主场景</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#ae5f3d14ac6804c4311bcc3e858eb8e5f">   21</a></span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#ae5f3d14ac6804c4311bcc3e858eb8e5f">scene</a> = scene</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="comment"># 敌机资源</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a61f61323f57eb3676d4a207e162cfab6">   23</a></span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a61f61323f57eb3676d4a207e162cfab6">image</a> = pygame.image.load(f<span class="stringliteral">&#39;source/plane/enemy-{random.randint(1, 4)}.png&#39;</span>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="comment"># 敌机边框</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">   25</a></span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a> = self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a61f61323f57eb3676d4a207e162cfab6">image</a>.get_rect()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment"># 移动速度</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a1870478c579e80f1f05bc63b2a8208c7">   27</a></span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a1870478c579e80f1f05bc63b2a8208c7">speed</a> = speed</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="comment"># 是否可见</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a5a0382482b2128543e5707299b17069c">   29</a></span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a5a0382482b2128543e5707299b17069c">visible</a> = <span class="keyword">False</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment"># 初始化子弹</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">   31</a></span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">bullet</a> = <a class="code hl_class" href="class_bullet_1_1_bullet.html">Bullet</a>(scene, is_enemy=<span class="keyword">True</span>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+</div>
+<div class="foldopen" id="foldopen00033" data-start="" data-end="">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a50facea912974644beaf1e0b15df2d04">   33</a></span>    <span class="keyword">def </span><a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#a50facea912974644beaf1e0b15df2d04">set_used</a>(self, start_x, start_y):</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[0] = start_x</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[1] = start_y</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a1870478c579e80f1f05bc63b2a8208c7">speed</a> = random.randint(4, 8)   <span class="comment"># 每次生成的飞机是随机速度</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a5a0382482b2128543e5707299b17069c">visible</a> = <span class="keyword">True</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+</div>
+<div class="foldopen" id="foldopen00040" data-start="" data-end="">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#aba69ae46235e584071d735a14f85a848">   40</a></span>    <span class="keyword">def </span><a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#aba69ae46235e584071d735a14f85a848">calc_position</a>(self):</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="comment"># 计算飞机位置</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a5a0382482b2128543e5707299b17069c">visible</a>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>.move_ip(0, self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a1870478c579e80f1f05bc63b2a8208c7">speed</a>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">if</span> self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[1] &gt; SCENE_H:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                self.<a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#a5f52202b86eb4be9ee98c15270d34abb">set_unused</a>()</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="comment"># 计算子弹位置</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">bullet</a>.visible:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">bullet</a>.move(0, self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a1870478c579e80f1f05bc63b2a8208c7">speed</a> + 5)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+</div>
+<div class="foldopen" id="foldopen00052" data-start="" data-end="">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a7e3d20b365e744f9a59b2ffa379b1973">   52</a></span>    <span class="keyword">def </span><a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#a7e3d20b365e744f9a59b2ffa379b1973">draw_element</a>(self):</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="comment"># 绘制飞机</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a5a0382482b2128543e5707299b17069c">visible</a>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#ae5f3d14ac6804c4311bcc3e858eb8e5f">scene</a>.blit(self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a61f61323f57eb3676d4a207e162cfab6">image</a>, self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="comment"># 绘制子弹</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">bullet</a>.visible:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">bullet</a>.<a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#a7e3d20b365e744f9a59b2ffa379b1973">draw_element</a>()</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+</div>
+<div class="foldopen" id="foldopen00060" data-start="" data-end="">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a5f52202b86eb4be9ee98c15270d34abb">   60</a></span>    <span class="keyword">def </span><a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#a5f52202b86eb4be9ee98c15270d34abb">set_unused</a>(self):</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a5a0382482b2128543e5707299b17069c">visible</a> = <span class="keyword">False</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[0] = -1000    <span class="comment"># 随意位置,只要在屏幕之外</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[1] = -1000</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment"># 发射子弹</span></div>
+<div class="foldopen" id="foldopen00066" data-start="" data-end="">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_enemy_plane_1_1_enemy_plane.html#a53b37a8364810fbb73afe62e4492f0ab">   66</a></span>    <span class="keyword">def </span><a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#a53b37a8364810fbb73afe62e4492f0ab">shoot</a>(self):</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="comment"># 子弹可见时就不再发射</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">if</span> self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">bullet</a>.visible:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <span class="keywordflow">return</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        start_x = self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[0] + self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[2]/2 - self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">bullet</a>.bbox[2]/2</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        start_y = self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[1] + self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">bbox</a>[3] - 10</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        self.<a class="code hl_variable" href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">bullet</a>.<a class="code hl_function" href="class_enemy_plane_1_1_enemy_plane.html#a50facea912974644beaf1e0b15df2d04">set_used</a>(start_x, start_y)  <span class="comment"># 给子弹初始坐标</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordflow">if</span> __name__ == <span class="stringliteral">&#39;__main__&#39;</span>:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    pygame.init()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="namespace_enemy_plane.html#acb971a6e32945ceeab8fff4edc6076f4">   78</a></span>    window = pygame.display.set_mode([512, 768])</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="namespace_enemy_plane.html#acf81b266b6a61dbafde6b18cda407783">   79</a></span>    clock = pygame.time.Clock()</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="namespace_enemy_plane.html#a6fd230816f405b9a6dfe67d535aaadb5">   81</a></span>    enemy = <a class="code hl_class" href="class_enemy_plane_1_1_enemy_plane.html">EnemyPlane</a>(window)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    enemy.set_used(random.randint(0, SCENE_W - enemy.bbox[2]), -enemy.bbox[3])</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="namespace_enemy_plane.html#a515600fd90eb1242f8a58b79e01d9237">   84</a></span>    index = 0</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">while</span> <span class="keyword">True</span>:</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="comment"># 清空窗口</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        window.fill((0, 0, 0))</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="comment"># 计算位置</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        enemy.calc_position()</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="comment"># 绘制敌机</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        enemy.draw_element()</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="comment"># 发射子弹</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        index += 1</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">if</span> index &gt; 120 <span class="keywordflow">and</span> random.randint(1, 100) &gt; 80 <span class="keywordflow">and</span> enemy.bbox[1] &lt; 300:</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            enemy.shoot()</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            index = 0</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="comment"># 敌机复活</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> <span class="keywordflow">not</span> enemy.visible:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            enemy.set_used(random.randint(0, SCENE_W - enemy.bbox[2]), -enemy.bbox[3])</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        pygame.event.get()</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        pygame.display.update()</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        clock.tick(60)</div>
+<div class="ttc" id="aclass_bullet_1_1_bullet_html"><div class="ttname"><a href="class_bullet_1_1_bullet.html">Bullet.Bullet</a></div><div class="ttdef"><b>定义</b> <a href="_bullet_8py_source.html#l00013">Bullet.py:13</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html">EnemyPlane.EnemyPlane</a></div><div class="ttdef"><b>定义</b> <a href="#l00017">EnemyPlane.py:17</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a1870478c579e80f1f05bc63b2a8208c7"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a1870478c579e80f1f05bc63b2a8208c7">EnemyPlane.EnemyPlane.speed</a></div><div class="ttdeci">speed</div><div class="ttdef"><b>定义</b> <a href="#l00027">EnemyPlane.py:27</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a38dc1dbe67d0c028bd3fab53725fad3c"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a38dc1dbe67d0c028bd3fab53725fad3c">EnemyPlane.EnemyPlane.bbox</a></div><div class="ttdeci">bbox</div><div class="ttdef"><b>定义</b> <a href="#l00025">EnemyPlane.py:25</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a50facea912974644beaf1e0b15df2d04"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a50facea912974644beaf1e0b15df2d04">EnemyPlane.EnemyPlane.set_used</a></div><div class="ttdeci">set_used(self, start_x, start_y)</div><div class="ttdef"><b>定义</b> <a href="#l00033">EnemyPlane.py:33</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a53b37a8364810fbb73afe62e4492f0ab"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a53b37a8364810fbb73afe62e4492f0ab">EnemyPlane.EnemyPlane.shoot</a></div><div class="ttdeci">shoot(self)</div><div class="ttdef"><b>定义</b> <a href="#l00066">EnemyPlane.py:66</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a5a0382482b2128543e5707299b17069c"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a5a0382482b2128543e5707299b17069c">EnemyPlane.EnemyPlane.visible</a></div><div class="ttdeci">visible</div><div class="ttdef"><b>定义</b> <a href="#l00029">EnemyPlane.py:29</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a5f52202b86eb4be9ee98c15270d34abb"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a5f52202b86eb4be9ee98c15270d34abb">EnemyPlane.EnemyPlane.set_unused</a></div><div class="ttdeci">set_unused(self)</div><div class="ttdef"><b>定义</b> <a href="#l00060">EnemyPlane.py:60</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a61f61323f57eb3676d4a207e162cfab6"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a61f61323f57eb3676d4a207e162cfab6">EnemyPlane.EnemyPlane.image</a></div><div class="ttdeci">image</div><div class="ttdef"><b>定义</b> <a href="#l00023">EnemyPlane.py:23</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a737b7ee27b91163f22720b8530d032b6"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a737b7ee27b91163f22720b8530d032b6">EnemyPlane.EnemyPlane.bullet</a></div><div class="ttdeci">bullet</div><div class="ttdef"><b>定义</b> <a href="#l00031">EnemyPlane.py:31</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_a7e3d20b365e744f9a59b2ffa379b1973"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#a7e3d20b365e744f9a59b2ffa379b1973">EnemyPlane.EnemyPlane.draw_element</a></div><div class="ttdeci">draw_element(self)</div><div class="ttdef"><b>定义</b> <a href="#l00052">EnemyPlane.py:52</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_aba69ae46235e584071d735a14f85a848"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#aba69ae46235e584071d735a14f85a848">EnemyPlane.EnemyPlane.calc_position</a></div><div class="ttdeci">calc_position(self)</div><div class="ttdef"><b>定义</b> <a href="#l00040">EnemyPlane.py:40</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_ae5f3d14ac6804c4311bcc3e858eb8e5f"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#ae5f3d14ac6804c4311bcc3e858eb8e5f">EnemyPlane.EnemyPlane.scene</a></div><div class="ttdeci">scene</div><div class="ttdef"><b>定义</b> <a href="#l00021">EnemyPlane.py:21</a></div></div>
+<div class="ttc" id="aclass_enemy_plane_1_1_enemy_plane_html_af7970ef8f0c059102ad63b96b1f39e41"><div class="ttname"><a href="class_enemy_plane_1_1_enemy_plane.html#af7970ef8f0c059102ad63b96b1f39e41">EnemyPlane.EnemyPlane.__init__</a></div><div class="ttdeci">__init__(self, scene, speed=10)</div><div class="ttdef"><b>定义</b> <a href="#l00019">EnemyPlane.py:19</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_enemy_plane_8py.html">EnemyPlane.py</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

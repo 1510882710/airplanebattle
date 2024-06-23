@@ -1,0 +1,6 @@
+<map id="MainScene.MainScene.calc_position" name="MainScene.MainScene.calc_position">
+<area shape="rect" id="Node000001" title=" " alt="" coords="231,29,414,72"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="359,16,345,10,322,8,301,10,288,15,282,21,284,28,279,29,277,19,285,10,300,5,322,3,347,5,361,11"/>
+<area shape="rect" id="Node000002" href="$class_main_scene_1_1_main_scene.html#a93494b3ad4f16b9b6ac828619a9a544a" title=" " alt="" coords="5,37,183,64"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="215,53,183,53,183,48,215,48"/>
+</map>

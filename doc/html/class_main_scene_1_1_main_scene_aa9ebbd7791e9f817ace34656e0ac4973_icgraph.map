@@ -1,0 +1,8 @@
+<map id="MainScene.MainScene.draw_battle_data" name="MainScene.MainScene.draw_battle_data">
+<area shape="rect" id="Node000001" title=" " alt="" coords="465,35,651,77"/>
+<area shape="rect" id="Node000002" href="$class_main_scene_1_1_main_scene.html#a366751cf57fec0327def32e6a9de5042" title=" " alt="" coords="231,5,417,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="449,45,417,41,418,36,450,40"/>
+<area shape="rect" id="Node000003" href="$class_main_scene_1_1_main_scene.html#a93494b3ad4f16b9b6ac828619a9a544a" title=" " alt="" coords="5,43,183,69"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="450,62,417,63,231,63,183,62,183,56,231,57,417,57,450,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="215,43,184,47,183,42,215,38"/>
+</map>

@@ -1,0 +1,187 @@
+\doxysection{Main\+Scene.\+py}
+\hypertarget{_main_scene_8py_source}{}\label{_main_scene_8py_source}\mbox{\hyperlink{_main_scene_8py}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00001}\mbox{\hyperlink{namespace_main_scene}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00002}00002\ \textcolor{stringliteral}{游戏主窗口文件}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00003}00003\ \textcolor{stringliteral}{\ \ \ \ MainScene\ 类表示游戏主场景，负责游戏的核心逻辑：}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00004}00004\ \textcolor{stringliteral}{\ \ \ \ 初始化主场景}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00005}00005\ \textcolor{stringliteral}{\ \ \ \ \ def\ \_\_init\_\_(self):}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00006}00006\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ 创建主窗口,飞机大战等标题}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00007}00007\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00008}00008\ \textcolor{stringliteral}{\ \ \ \ 四个基本步骤的函数}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00009}00009\ \textcolor{stringliteral}{\ \ \ \ 计算坐标,绘制元素,处理事件,碰撞检测}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00010}00010\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00011}00011\ \textcolor{stringliteral}{\ \ \ \ \ 主循环}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00012}00012\ \textcolor{stringliteral}{\ \ \ \ def\ run(self):}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00013}00013\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ while\ True:}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00014}00014\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ 四种函数一直循环}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00015}00015\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00016}00016\ \textcolor{keyword}{import}\ sys}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00017}00017\ \textcolor{keyword}{import}\ pygame}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00018}00018\ \textcolor{keyword}{from}\ config1\ \textcolor{keyword}{import}\ *}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00019}00019\ \textcolor{keyword}{from}\ GameMap\ \textcolor{keyword}{import}\ GameMap}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00020}00020\ \textcolor{keyword}{from}\ HeroPlane\ \textcolor{keyword}{import}\ HeroPlane}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00021}00021\ \textcolor{keyword}{from}\ EnemyManager\ \textcolor{keyword}{import}\ EnemyManager}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00023}00023\ \textcolor{comment}{\#\ 主场景}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00024}\mbox{\hyperlink{class_main_scene_1_1_main_scene}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene}{MainScene}}(object):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00026}00026\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00027}00027\ \textcolor{stringliteral}{\ \ \ \ MainScene\ 类表示游戏主场景，负责游戏的核心逻辑}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00028}00028\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00030}00030\ \ \ \ \ \textcolor{comment}{\#\ 初始化主场景}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00031}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a6204a76018e95d34439acd468787fb9b}{00031}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene_a6204a76018e95d34439acd468787fb9b}{\_\_init\_\_}}(self):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化模块}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ pygame.init()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化时钟}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00035}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a8af8da80d070feda0f6bf3e57660e8f4}{00035}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a8af8da80d070feda0f6bf3e57660e8f4}{clock}}\ =\ pygame.time.Clock()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化游戏窗口}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00037}\mbox{\hyperlink{class_main_scene_1_1_main_scene_ae38f178ed1a08e3bb650ab7e8fd7acdc}{00037}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ae38f178ed1a08e3bb650ab7e8fd7acdc}{scene}}\ =\ pygame.display.set\_mode((SCENE\_W,\ SCENE\_H))}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 设置窗口标题}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ pygame.display.set\_caption(\textcolor{stringliteral}{"{}飞机大战-\/v1.0\ 作者:\ xyxwfg"{}})}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化游戏元素}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a7aadd3527c03e3f656120cc8f5ab89ef}{init\_elements}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 统计战斗数据}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00044}\mbox{\hyperlink{class_main_scene_1_1_main_scene_adc0fa33dbaf387e2aab197f13f32a4c5}{00044}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adc0fa33dbaf387e2aab197f13f32a4c5}{defeat\_count}}\ =\ 0\ \ \textcolor{comment}{\#\ 击败敌机数}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00045}\mbox{\hyperlink{class_main_scene_1_1_main_scene_ac7be49b25b46309a5f297e467c1fa1e6}{00045}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ac7be49b25b46309a5f297e467c1fa1e6}{damage\_count}}\ =\ 0\ \ \textcolor{comment}{\#\ 被击中次数}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00046}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a6ff5cfa604d6d07eea373c6be1f34e89}{00046}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a6ff5cfa604d6d07eea373c6be1f34e89}{impact\_count}}\ =\ 0\ \ \textcolor{comment}{\#\ 被撞击次数}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00048}00048\ \ \ \ \ \textcolor{comment}{\#\ 初始化游戏元素}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00049}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a7aadd3527c03e3f656120cc8f5ab89ef}{00049}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene_a7aadd3527c03e3f656120cc8f5ab89ef}{init\_elements}}(self):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化游戏地图}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00051}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a94dbb9ad59f3abe7c53b1e7e32b21b2e}{00051}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a94dbb9ad59f3abe7c53b1e7e32b21b2e}{map}}\ =\ \mbox{\hyperlink{class_game_map_1_1_game_map}{GameMap}}(self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ae38f178ed1a08e3bb650ab7e8fd7acdc}{scene}})}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化英雄飞机}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00053}\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{00053}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}\ =\ \mbox{\hyperlink{class_hero_plane_1_1_hero_plane}{HeroPlane}}(self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ae38f178ed1a08e3bb650ab7e8fd7acdc}{scene}})}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化敌机序列}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00055}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{00055}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}\ =\ \mbox{\hyperlink{class_enemy_manager_1_1_enemy_manager}{EnemyManager}}(self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ae38f178ed1a08e3bb650ab7e8fd7acdc}{scene}})}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00057}00057\ \ \ \ \ \textcolor{comment}{\#\ 计算坐标}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00058}\mbox{\hyperlink{class_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25}{00058}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25}{calc\_position}}(self):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a94dbb9ad59f3abe7c53b1e7e32b21b2e}{map}}.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25}{calc\_position}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 计算英雄弹夹坐标}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25}{calc\_position}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 计算敌机位置}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25}{calc\_position}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00065}00065\ \ \ \ \ \textcolor{comment}{\#\ 绘制元素}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00066}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042}{00066}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042}{draw\_elements}}(self):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a94dbb9ad59f3abe7c53b1e7e32b21b2e}{map}}.draw\_element()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 绘制英雄飞机}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.draw\_element()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 绘制敌机}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00071}00071\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}.draw\_element()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 调用战斗数据}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00073}00073\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_aa9ebbd7791e9f817ace34656e0ac4973}{draw\_battle\_data}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00075}00075\ \ \ \ \ \textcolor{comment}{\#\ 处理事件}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00076}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a6eb15dab3e9814dd27273303a3467df1}{00076}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene_a6eb15dab3e9814dd27273303a3467df1}{handle\_events}}(self):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 点击窗口关闭按钮}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00079}00079\ \ \ \ \ \ \ \ \ events\ =\ pygame.event.get()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ event\ \textcolor{keywordflow}{in}\ events:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ event.type\ ==\ pygame.QUIT:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pygame.quit()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sys.exit()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机出发事件}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ event.type\ ==\ EnemyManager.ENEMY\_START\_EVENT:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}.set\_out()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机发射子弹}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ event.type\ ==\ EnemyManager.ENEMY\_SHOOT\_EVENT:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}.shoot()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 获得当前按下的键}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00093}00093\ \ \ \ \ \ \ \ \ keys\ =\ pygame.key.get\_pressed()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 射击}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ keys[pygame.K\_j]:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.shoot(1)}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ keys[pygame.K\_k]:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.shoot(3)}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ keys[pygame.K\_l]:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.shoot(5)}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 上}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ keys[pygame.K\_w]:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.top()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 下}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ keys[pygame.K\_s]:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.bottom()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 左}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ keys[pygame.K\_a]:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.left()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 右}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ keys[pygame.K\_d]:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.right()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00114}00114\ \ \ \ \ \textcolor{comment}{\#\ 碰撞检测}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00115}\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb160e5bb20791b3f0d40d74e101f8a3}{00115}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb160e5bb20791b3f0d40d74e101f8a3}{detect\_conlision}}(self):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机和英雄子弹}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ bullet\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.bullets.bullet\_list:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ bullet.visible:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ enemy\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}.enemies:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ enemy.visible\ \textcolor{keywordflow}{or}\ \textcolor{keywordflow}{not}\ bullet.visible:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 判断两个边框是否相交\ 就是\ 碰撞}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ pygame.Rect.colliderect(bullet.bbox,\ enemy.bbox):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bullet.set\_unused()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.set\_unused()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adc0fa33dbaf387e2aab197f13f32a4c5}{defeat\_count}}\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机和英雄飞机}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ enemy\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}.enemies:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ enemy.visible:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ pygame.Rect.colliderect(self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.bbox,\ enemy.bbox):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.set\_unused()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a6ff5cfa604d6d07eea373c6be1f34e89}{impact\_count}}\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机子弹和英雄飞机}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ enemy\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}.enemies:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ enemy.bullet.visible:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ pygame.Rect.colliderect(self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.bbox,\ enemy.bullet.bbox):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.bullet.set\_unused()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ac7be49b25b46309a5f297e467c1fa1e6}{damage\_count}}\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 敌机子弹和英雄子弹}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ enemy\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a022c152da0d5ba0a5f95e1bde6a06614}{enemy}}.enemies:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ enemy.bullet.visible:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ bullet\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb4e99c2d7a325e531f68f8791435fd6}{hero}}.bullets.bullet\_list:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ bullet.visible:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ pygame.Rect.colliderect(bullet.bbox,\ enemy.bullet.bbox):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy.bullet.set\_unused()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bullet.set\_unused()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00156}00156\ \ \ \ \ \textcolor{comment}{\#\ 在窗口中绘制战斗数据：}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00157}\mbox{\hyperlink{class_main_scene_1_1_main_scene_aa9ebbd7791e9f817ace34656e0ac4973}{00157}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene_aa9ebbd7791e9f817ace34656e0ac4973}{draw\_battle\_data}}(self):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 使用\ SimHei\ 字体，并设置\ 16\ 号大小}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00159}00159\ \ \ \ \ \ \ \ \ font\ =\ pygame.font.Font(\textcolor{stringliteral}{'source/fonts/SimHei.ttf'},\ 16)}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00160}00160\ \ \ \ \ \ \ \ \ text\ =\ f\textcolor{stringliteral}{"{}击毁数:\{self.defeat\_count\}\ 被击中:\{self.damage\_count\}\ 被撞击:\{self.impact\_count\}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 文字内容、抗锯齿、颜色}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00162}00162\ \ \ \ \ \ \ \ \ text\ =\ font.render(text,\ \textcolor{keyword}{True},\ (255,\ 255,\ 255))}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 绘制文本内容}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00164}00164\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ae38f178ed1a08e3bb650ab7e8fd7acdc}{scene}}.blit(text,\ (150,\ 20))}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00166}00166\ \ \ \ \ \textcolor{comment}{\#\ 主循环}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00167}\mbox{\hyperlink{class_main_scene_1_1_main_scene_a93494b3ad4f16b9b6ac828619a9a544a}{00167}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_main_scene_1_1_main_scene_a93494b3ad4f16b9b6ac828619a9a544a}{run}}(self):}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ \textcolor{keyword}{True}:}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 碰撞检测}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_adb160e5bb20791b3f0d40d74e101f8a3}{detect\_conlision}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 计算元素坐标}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_ad9d1eb67c2597f7664d5fc23ef105e25}{calc\_position}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 绘制元素图片}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a366751cf57fec0327def32e6a9de5042}{draw\_elements}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 处理事件}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a6eb15dab3e9814dd27273303a3467df1}{handle\_events}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 战斗数据}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_aa9ebbd7791e9f817ace34656e0ac4973}{draw\_battle\_data}}()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 刷新显示}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ pygame.display.update()}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 控制帧率}}
+\DoxyCodeLine{\Hypertarget{_main_scene_8py_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_main_scene_1_1_main_scene_a8af8da80d070feda0f6bf3e57660e8f4}{clock}}.tick(60)}
+
+\end{DoxyCode}

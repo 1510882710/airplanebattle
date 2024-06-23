@@ -1,0 +1,75 @@
+\doxysection{Bullet\+For\+Hero.\+py}
+\hypertarget{_bullet_for_hero_8py_source}{}\label{_bullet_for_hero_8py_source}\mbox{\hyperlink{_bullet_for_hero_8py}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00001}\mbox{\hyperlink{namespace_bullet_for_hero}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00002}00002\ \textcolor{stringliteral}{子弹弹夹\ 一次性发射3,4个子弹}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00003}00003\ \textcolor{stringliteral}{\ \ \ \ calc\_position\ 计算所有子弹的位置}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00004}00004\ \textcolor{stringliteral}{\ \ \ \ draw\_element\ 绘制所有子弹对象}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00005}00005\ \textcolor{stringliteral}{\ \ \ \ shoot\ 子弹发射的策略。在该函数的开始位置，我们增加了函数触发的间隔，例如：当键按下时，经过\ 10\ 帧时间才会发射子弹，这样有助于控制子弹发射间隔。}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00006}00006\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00008}00008\ \textcolor{keyword}{import}\ math}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00009}00009\ \textcolor{keyword}{import}\ pygame}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00010}00010\ \textcolor{keyword}{from}\ Bullet\ \textcolor{keyword}{import}\ Bullet}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00013}\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero}{BulletForHero}}:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00015}\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a656e46f6b7fa3cde687507ae733d74a7}{00015}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a656e46f6b7fa3cde687507ae733d74a7}{\_\_init\_\_}}(self,\ scene):}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化子弹列表}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00017}\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a86bccac2485a68355e6f033a599e37a7}{00017}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a86bccac2485a68355e6f033a599e37a7}{bullet\_list}}\ =\ [\mbox{\hyperlink{class_bullet_1_1_bullet}{Bullet}}(scene)\ \textcolor{keywordflow}{for}\ \_\ \textcolor{keywordflow}{in}\ range(15)]}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 子弹发射频率}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00019}\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a91df6ee29bc2702551517ea751fa65fe}{00019}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a91df6ee29bc2702551517ea751fa65fe}{frame\_limit}}\ =\ 8}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00020}\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a9a5c68643eb0d3dcd270645b8001635d}{00020}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a9a5c68643eb0d3dcd270645b8001635d}{frame\_index}}\ =\ 0}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00022}\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a7165e75477489882f61114b4dcfac4c3}{00022}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a7165e75477489882f61114b4dcfac4c3}{calc\_position}}(self):}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ bullet\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a86bccac2485a68355e6f033a599e37a7}{bullet\_list}}:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ bullet.move(0,\ -\/15)}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00026}\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a5688db86ba40754b61acf2314b945e34}{00026}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a5688db86ba40754b61acf2314b945e34}{draw\_element}}(self):}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ bullet\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a86bccac2485a68355e6f033a599e37a7}{bullet\_list}}:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ bullet.draw\_element()}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00030}\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_affb0dc63bc67be58ab377762b5ac9c23}{00030}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_affb0dc63bc67be58ab377762b5ac9c23}{shoot}}(self,\ start\_x,\ start\_y,\ shoot\_number):}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a9a5c68643eb0d3dcd270645b8001635d}{frame\_index}}\ +=\ 1}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a9a5c68643eb0d3dcd270645b8001635d}{frame\_index}}\ <\ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a91df6ee29bc2702551517ea751fa65fe}{frame\_limit}}:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a9a5c68643eb0d3dcd270645b8001635d}{frame\_index}}\ =\ 0}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 计算子弹初始位置}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00038}00038\ \ \ \ \ \ \ \ \ distance\ =\ 31}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ position\_xs\ =\ [\ start\_x\ +\ (index\ -\/\ math.floor(shoot\_number\ /\ 2))\ *\ distance\ \textcolor{keywordflow}{for}\ index\ \textcolor{keywordflow}{in}\ range(shoot\_number)]}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ wait\_for\_shoot\ =\ []}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ bullet\ \textcolor{keywordflow}{in}\ self.\mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero_a86bccac2485a68355e6f033a599e37a7}{bullet\_list}}:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keywordflow}{not}\ bullet.visible:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wait\_for\_shoot.append(bullet)}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ len(wait\_for\_shoot)\ ==\ shoot\_number:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ len(wait\_for\_shoot)\ ==\ shoot\_number:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ bullet,\ x\ \textcolor{keywordflow}{in}\ zip(wait\_for\_shoot,\ position\_xs):}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bullet.set\_used(x\ -\/\ bullet.bbox[2]/2,\ start\_y\ -\/\ bullet.bbox[3])}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00052}00052\ \textcolor{keywordflow}{if}\ \_\_name\_\_\ ==\ \textcolor{stringliteral}{'\_\_main\_\_'}:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00053}00053\ \ \ \ \ pygame.init()}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00054}\mbox{\hyperlink{namespace_bullet_for_hero_afc4c78cabab9e396ab6e6dcccc840fe0}{00054}}\ \ \ \ \ window\ =\ pygame.display.set\_mode([512,\ 768])}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00055}\mbox{\hyperlink{namespace_bullet_for_hero_a33c0d38b40adb65fcd9c62ec83566b3f}{00055}}\ \ \ \ \ clock\ =\ pygame.time.Clock()}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00056}00056\ \ \ \ \ \textcolor{comment}{\#\ 初始化弹夹}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00057}\mbox{\hyperlink{namespace_bullet_for_hero_ac04d7c6653cb54fcf5805b0d2a55f1ae}{00057}}\ \ \ \ \ bullets\ =\ \mbox{\hyperlink{class_bullet_for_hero_1_1_bullet_for_hero}{BulletForHero}}(window)}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{while}\ \textcolor{keyword}{True}:}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 清空屏幕}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ window.fill((0,\ 0,\ 0))}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 子弹坐标}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ bullets.calc\_position()}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 子弹绘制}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00064}00064\ \ \ \ \ \ \ \ \ bullets.draw\_element()}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 发射子弹}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00066}00066\ \ \ \ \ \ \ \ \ bullets.shoot(250,\ 400,\ 3)}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 读取事件，避免窗口卡顿}}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00068}00068\ \ \ \ \ \ \ \ \ pygame.event.get()}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00069}00069\ \ \ \ \ \ \ \ \ pygame.display.update()}
+\DoxyCodeLine{\Hypertarget{_bullet_for_hero_8py_source_l00070}00070\ \ \ \ \ \ \ \ \ clock.tick(60)}
+
+\end{DoxyCode}

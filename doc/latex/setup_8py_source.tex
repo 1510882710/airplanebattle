@@ -1,0 +1,32 @@
+\doxysection{setup.\+py}
+\hypertarget{setup_8py_source}{}\label{setup_8py_source}\mbox{\hyperlink{setup_8py}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00001}\mbox{\hyperlink{namespacesetup}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00002}00002\ \textcolor{stringliteral}{描述打包的配置信息。cx\_Freeze}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00003}00003\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00005}00005\ \textcolor{keyword}{from}\ cx\_Freeze\ \textcolor{keyword}{import}\ setup,\ Executable}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00007}00007\ \textcolor{comment}{\#\ 配置信息}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00008}\mbox{\hyperlink{namespacesetup_abc1900e263b33484ee9feca1b1414ccf}{00008}}\ build\_options\ =\ \{}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00009}00009\ \ \ \ \ \textcolor{stringliteral}{"{}packages"{}}:\ [],\ \ \textcolor{comment}{\#\ 需要打包的额外模块}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00010}00010\ \ \ \ \ \textcolor{stringliteral}{"{}include\_files"{}}:\ [\textcolor{stringliteral}{"{}source"{}}],\ \ \textcolor{comment}{\#\ 需要包含的额外文件或文件夹}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00011}00011\ \ \ \ \ \textcolor{stringliteral}{"{}excludes"{}}:\ [],\ \ \textcolor{comment}{\#\ 需要排除的模块}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00012}00012\ \ \ \ \ \textcolor{stringliteral}{"{}optimize"{}}:\ 2,\ \ \textcolor{comment}{\#\ 优化级别}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00015}00015\ \textcolor{comment}{\#\ 执行文件}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00016}\mbox{\hyperlink{namespacesetup_adb10b1aa6bc2931b5c81c12c4d460ac2}{00016}}\ executables\ =\ [}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00017}00017\ \ \ \ \ Executable(\textcolor{stringliteral}{"{}main.py"{}},\ base=\textcolor{keywordtype}{None})\ \ \textcolor{comment}{\#\ 主程序入口文件}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00018}00018\ ]}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00020}00020\ \textcolor{comment}{\#\ 执行打包}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00021}00021\ setup(}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00022}\mbox{\hyperlink{namespacesetup_ab3a7a0638d76a01367c5bc3cc699447f}{00022}}\ \ \ \ \ name=\textcolor{stringliteral}{"{}MyApp"{}},\ \ \textcolor{comment}{\#\ 程序名称}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00023}\mbox{\hyperlink{namespacesetup_a2aa722b36a933088812b50ea79b97a5c}{00023}}\ \ \ \ \ version=\textcolor{stringliteral}{"{}1.0"{}},\ \ \textcolor{comment}{\#\ 版本号}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00024}\mbox{\hyperlink{namespacesetup_aedf461ec52a946bda975938ba0b93ec0}{00024}}\ \ \ \ \ description=\textcolor{stringliteral}{"{}飞机大战动态地图程序,键盘大写操控飞机,敌机出现发射子弹,碰撞检测,得分打包"{}},\ \ \textcolor{comment}{\#\ 程序描述}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00025}\mbox{\hyperlink{namespacesetup_abb722673b1eab1c7c3323d622670eca4}{00025}}\ \ \ \ \ options=\{\textcolor{stringliteral}{"{}build\_exe"{}}:\ build\_options\},\ \ \textcolor{comment}{\#\ 打包选项}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00026}00026\ \ \ \ \ executables=executables\ \ \textcolor{comment}{\#\ 可执行文件}}
+\DoxyCodeLine{\Hypertarget{setup_8py_source_l00027}00027\ )}
+
+\end{DoxyCode}

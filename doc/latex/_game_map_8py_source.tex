@@ -1,0 +1,63 @@
+\doxysection{Game\+Map.\+py}
+\hypertarget{_game_map_8py_source}{}\label{_game_map_8py_source}\mbox{\hyperlink{_game_map_8py}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00001}\mbox{\hyperlink{namespace_game_map}{00001}}\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00002}00002\ \textcolor{stringliteral}{地图滚动}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00003}00003\ \textcolor{stringliteral}{\ \ \ \ 创建地图滚动类,实现无缝衔接地图}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00004}00004\ \textcolor{stringliteral}{\ \ \ \ 2.\ 创建完对象后,需加载到\ MainScene.py}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00005}00005\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00006}00006\ \textcolor{stringliteral}{\ \ \ \ GameMap类\ 只需要三个函数}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00007}00007\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ def\ \_\_init\_\_(self):}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00008}00008\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ pass}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00009}00009\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00010}00010\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ def\ draw\_element(self):}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00011}00011\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 绘制地图所需要的图像到窗口上}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00012}00012\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ pass}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00013}00013\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00014}00014\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ def\ calc\_position(self):}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00015}00015\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ 计算需要绘制的图像的位置}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00016}00016\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ pass}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00017}00017\ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00018}00018\ \textcolor{keyword}{import}\ random}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00019}00019\ \textcolor{keyword}{import}\ pygame}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00020}00020\ \textcolor{keyword}{from}\ config1\ \textcolor{keyword}{import}\ *}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00023}\mbox{\hyperlink{class_game_map_1_1_game_map}{00023}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_map_1_1_game_map}{GameMap}}:}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00024}00024\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}地图类GameMap"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00025}00025\ \ \ \ \ \textcolor{comment}{\#\ 初始化地图}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00026}\mbox{\hyperlink{class_game_map_1_1_game_map_ae428e355b1a15310ca942b377545c95c}{00026}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_game_map_1_1_game_map_ae428e355b1a15310ca942b377545c95c}{\_\_init\_\_}}(self,\ scene):}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00028}00028\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ 初始化地图}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00029}00029\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ 构造函数}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00030}00030\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 地图编号}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ map\_index\ =\ MAP\_INDEX\ \textcolor{keywordflow}{if}\ MAP\_INDEX\ >=\ 1\ \textcolor{keywordflow}{and}\ MAP\_INDEX\ <=\ 3\ \textcolor{keywordflow}{else}\ random.randint(1,\ 3)}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00033}00033\ \ \ \ \ \ \ \ \ map\_filename\ =\ f\textcolor{stringliteral}{'source/map/map-\/\{map\_index\}.jpg'}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 加载相同图片资源,做交替实现地图滚动}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00036}\mbox{\hyperlink{class_game_map_1_1_game_map_aaef9fabfa58a09a405788c97e9ed943f}{00036}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_aaef9fabfa58a09a405788c97e9ed943f}{image1}}\ =\ pygame.image.load(map\_filename)}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00037}\mbox{\hyperlink{class_game_map_1_1_game_map_a7420d1b5398fbea18f4df60f177d7f36}{00037}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a7420d1b5398fbea18f4df60f177d7f36}{image2}}\ =\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_aaef9fabfa58a09a405788c97e9ed943f}{image1}}.copy()}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 地图滚动速度}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00040}\mbox{\hyperlink{class_game_map_1_1_game_map_a0a1f015f90bdae8b9b309de4276f97ca}{00040}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a0a1f015f90bdae8b9b309de4276f97ca}{scroll\_speed}}\ =\ 3}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 保存场景对象}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00043}\mbox{\hyperlink{class_game_map_1_1_game_map_aa309ee8b316f5997d0e9bc88e4b8e0d5}{00043}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_aa309ee8b316f5997d0e9bc88e4b8e0d5}{main\_scene}}\ =\ scene}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ 初始化两张图片初始化位置}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00046}\mbox{\hyperlink{class_game_map_1_1_game_map_a0f178e9f28a9f0dad8c67aea66f71776}{00046}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a0f178e9f28a9f0dad8c67aea66f71776}{y1}}\ =\ 0}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00047}\mbox{\hyperlink{class_game_map_1_1_game_map_a385ad35f195aa12405a039e5e8ef4ea7}{00047}}\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a385ad35f195aa12405a039e5e8ef4ea7}{y2}}\ =\ -\/SCENE\_H}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00049}00049\ \ \ \ \ \textcolor{comment}{\#\ 计算地图图片绘制坐标}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00050}\mbox{\hyperlink{class_game_map_1_1_game_map_a22b75297c3505e4cd59e3feaf5dd7a8e}{00050}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_game_map_1_1_game_map_a22b75297c3505e4cd59e3feaf5dd7a8e}{calc\_position}}(self):}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}计算地图图片绘制坐标"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a0f178e9f28a9f0dad8c67aea66f71776}{y1}}\ =\ 0\ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a0f178e9f28a9f0dad8c67aea66f71776}{y1}}\ >=\ SCENE\_H\ \textcolor{keywordflow}{else}\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a0f178e9f28a9f0dad8c67aea66f71776}{y1}}\ +\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a0a1f015f90bdae8b9b309de4276f97ca}{scroll\_speed}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a385ad35f195aa12405a039e5e8ef4ea7}{y2}}\ =\ -\/SCENE\_H\ \textcolor{keywordflow}{if}\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a385ad35f195aa12405a039e5e8ef4ea7}{y2}}\ >=0\ \textcolor{keywordflow}{else}\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a385ad35f195aa12405a039e5e8ef4ea7}{y2}}\ +\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a0a1f015f90bdae8b9b309de4276f97ca}{scroll\_speed}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00055}00055\ \ \ \ \ \textcolor{comment}{\#\ 绘制地图的两张图片}}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00056}\mbox{\hyperlink{class_game_map_1_1_game_map_ad1070f73c353496456fbd814de37585a}{00056}}\ \ \ \ \ \textcolor{keyword}{def\ }\mbox{\hyperlink{class_game_map_1_1_game_map_ad1070f73c353496456fbd814de37585a}{draw\_element}}(self):}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_aa309ee8b316f5997d0e9bc88e4b8e0d5}{main\_scene}}.blit(self.\mbox{\hyperlink{class_game_map_1_1_game_map_aaef9fabfa58a09a405788c97e9ed943f}{image1}},\ (0,\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a0f178e9f28a9f0dad8c67aea66f71776}{y1}}))}
+\DoxyCodeLine{\Hypertarget{_game_map_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ self.\mbox{\hyperlink{class_game_map_1_1_game_map_aa309ee8b316f5997d0e9bc88e4b8e0d5}{main\_scene}}.blit(self.\mbox{\hyperlink{class_game_map_1_1_game_map_a7420d1b5398fbea18f4df60f177d7f36}{image2}},\ (0,\ self.\mbox{\hyperlink{class_game_map_1_1_game_map_a385ad35f195aa12405a039e5e8ef4ea7}{y2}}))}
+
+\end{DoxyCode}
