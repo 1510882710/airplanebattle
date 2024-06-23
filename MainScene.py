@@ -13,10 +13,11 @@
         while True:
         四种函数一直循环
 """
-
+import sys
 import pygame
 from config1 import *
 from GameMap import GameMap
+from HeroPlane import HeroPlane
 
 
 # 主场景
@@ -43,18 +44,52 @@ class MainScene(object):
     def init_elements(self):
         # 初始化游戏地图
         self.map = GameMap(self.scene)
+        # 初始化英雄飞机
+        self.hero = HeroPlane(self.scene)
 
     # 计算坐标
     def calc_position(self):
         self.map.calc_position()
+        # 计算英雄弹夹坐标
+        self.hero.calc_position()
 
     # 绘制元素
     def draw_elements(self):
         self.map.draw_element()
+        # 绘制英雄飞机
+        self.hero.draw_element()
 
     # 处理事件
     def handle_events(self):
-        pygame.event.get()
+
+        # 点击窗口关闭按钮
+        events = pygame.event.get()
+        for event in events:
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit() 
+
+        # 获得当前按下的键
+        keys = pygame.key.get_pressed()
+        # 射击
+        if keys[pygame.K_j]:
+            self.hero.shoot(1)
+        if keys[pygame.K_k]:
+            self.hero.shoot(3)
+        if keys[pygame.K_l]:
+            self.hero.shoot(5)
+        # 上
+        if keys[pygame.K_w]:
+            self.hero.top()
+        # 下
+        if keys[pygame.K_s]:
+            self.hero.bottom()
+        # 左
+        if keys[pygame.K_a]:
+            self.hero.left()
+        # 右
+        if keys[pygame.K_d]:
+            self.hero.right()
 
     # 碰撞检测
     def detect_conlision(self):
