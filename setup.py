@@ -21,7 +21,7 @@ executables = [
 setup(
     name="MyApp",  # 程序名称
     version="1.0",  # 版本号
-    description="飞机大战动态地图程序打包",  # 程序描述
+    description="飞机大战动态地图程序,键盘大写操控飞机,敌机出现发射子弹,碰撞检测,得分打包",  # 程序描述
     options={"build_exe": build_options},  # 打包选项
     executables=executables  # 可执行文件
 )
