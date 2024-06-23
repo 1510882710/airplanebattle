@@ -8,7 +8,7 @@ SCENE_W = 500
 SCENE_H = 500
 
 # 游戏地图
-MAP_INDEX = 1
+MAP_INDEX = 2
 
 # 英雄子弹类型
 HERO_BULLET_INDEX = 1
