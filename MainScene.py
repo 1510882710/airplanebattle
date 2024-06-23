@@ -40,6 +40,11 @@ class MainScene(object):
         # 初始化游戏元素
         self.init_elements()
 
+        # 统计战斗数据
+        self.defeat_count = 0  # 击败敌机数
+        self.damage_count = 0  # 被击中次数
+        self.impact_count = 0  # 被撞击次数
+
     # 初始化游戏元素
     def init_elements(self):
         # 初始化游戏地图
@@ -64,6 +69,8 @@ class MainScene(object):
         self.hero.draw_element()
         # 绘制敌机
         self.enemy.draw_element()
+        # 调用战斗数据
+        self.draw_battle_data()
 
     # 处理事件
     def handle_events(self):
@@ -117,6 +124,7 @@ class MainScene(object):
                 if pygame.Rect.colliderect(bullet.bbox, enemy.bbox):
                     bullet.set_unused()
                     enemy.set_unused()
+                    self.defeat_count += 1
 
         # 敌机和英雄飞机
         for enemy in self.enemy.enemies:
@@ -124,6 +132,7 @@ class MainScene(object):
                 continue
             if pygame.Rect.colliderect(self.hero.bbox, enemy.bbox):
                 enemy.set_unused()
+                self.impact_count += 1
 
         # 敌机子弹和英雄飞机
         for enemy in self.enemy.enemies:
@@ -131,6 +140,7 @@ class MainScene(object):
                 continue
             if pygame.Rect.colliderect(self.hero.bbox, enemy.bullet.bbox):
                 enemy.bullet.set_unused()
+                self.damage_count += 1
 
         # 敌机子弹和英雄子弹
         for enemy in self.enemy.enemies:
@@ -143,6 +153,16 @@ class MainScene(object):
                     enemy.bullet.set_unused()
                     bullet.set_unused()
 
+    # 在窗口中绘制战斗数据：
+    def draw_battle_data(self):
+        # 使用 SimHei 字体，并设置 16 号大小
+        font = pygame.font.Font('source/fonts/SimHei.ttf', 16)
+        text = f"击毁数:{self.defeat_count} 被击中:{self.damage_count} 被撞击:{self.impact_count}"
+        # 文字内容、抗锯齿、颜色
+        text = font.render(text, True, (255, 255, 255))
+        # 绘制文本内容
+        self.scene.blit(text, (150, 20))
+
     # 主循环
     def run(self):
         while True:
@@ -154,6 +174,8 @@ class MainScene(object):
             self.draw_elements()
             # 处理事件
             self.handle_events()
+            # 战斗数据
+            self.draw_battle_data()
             # 刷新显示
             pygame.display.update()
             # 控制帧率
