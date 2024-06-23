@@ -18,7 +18,7 @@ import pygame
 from config1 import *
 from GameMap import GameMap
 from HeroPlane import HeroPlane
-
+from EnemyManager import EnemyManager
 
 # 主场景
 class MainScene(object):
@@ -46,18 +46,24 @@ class MainScene(object):
         self.map = GameMap(self.scene)
         # 初始化英雄飞机
         self.hero = HeroPlane(self.scene)
+        # 初始化敌机序列
+        self.enemy = EnemyManager(self.scene)
 
     # 计算坐标
     def calc_position(self):
         self.map.calc_position()
         # 计算英雄弹夹坐标
         self.hero.calc_position()
+        # 计算敌机位置
+        self.enemy.calc_position()
 
     # 绘制元素
     def draw_elements(self):
         self.map.draw_element()
         # 绘制英雄飞机
         self.hero.draw_element()
+        # 绘制敌机
+        self.enemy.draw_element()
 
     # 处理事件
     def handle_events(self):
@@ -67,7 +73,14 @@ class MainScene(object):
         for event in events:
             if event.type == pygame.QUIT:
                 pygame.quit()
-                sys.exit() 
+                sys.exit()
+
+                # 敌机出发事件
+            if event.type == EnemyManager.ENEMY_START_EVENT:
+                self.enemy.set_out()
+                # 敌机发射子弹
+            if event.type == EnemyManager.ENEMY_SHOOT_EVENT:
+                self.enemy.shoot()
 
         # 获得当前按下的键
         keys = pygame.key.get_pressed()
